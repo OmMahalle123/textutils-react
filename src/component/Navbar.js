@@ -19,7 +19,7 @@ export default function Navbar(props) {
         </li>
        {/* <li className="nav-item">
           <Link className="nav-link"to="/about">{props.aboutText}</Link>
-       </li>*/}
+       </li> */}
 
          <li className="nav-item">
     <a className="nav-link" href="#" onClick={() => props.goToPage('about')}>

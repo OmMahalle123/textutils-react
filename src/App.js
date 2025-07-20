@@ -41,7 +41,14 @@ function App() {
   return (
     <>
    {/* <Router>*/}
-      <Navbar title="Textutils" aboutText="About" mode={mode} toggleMode={toggleMode} />
+      <Navbar
+  title="Textutils"
+  aboutText="About"
+  mode={mode}
+  toggleMode={toggleMode}
+  goToPage={setPage}
+/>
+
       <Alert alert={alert} />
       <div className="container my-3">
   {page === 'about' ? (
