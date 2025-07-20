@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './component/Navbar';
 import TextForm from './component/TextForm';
-//import About from './component/About';
+import About from './component/About';
 import React, { useState } from 'react';
 import Alert from './component/Alert';
 //import {
@@ -13,6 +13,8 @@ import Alert from './component/Alert';
 function App() {
   const [mode, setMode] = useState('dark');
   const [alert, setAlert] = useState(null);
+  const [page, setPage] = useState('home');
+
 
   const showAlert = (message, type) => {
     setAlert({
@@ -42,12 +44,12 @@ function App() {
       <Navbar title="Textutils" aboutText="About" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
-       { /*<Routes>*/}
-          {/*<Route exact path="/about" element={<About />} />*/}
-         { /*<Route exact path="/" />*/}
-          <TextForm showAlert={showAlert} heading="Enter the text to analyze below" />
-      {/*  </Routes>*/}
-      </div>
+  {page === 'about' ? (
+    <About />
+  ) : (
+    <TextForm showAlert={showAlert} heading="Enter the text to analyze below" />
+  )}
+</div>
    {/* </Router>*/}
    </>
   );
